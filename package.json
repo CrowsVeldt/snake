@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "react-redux": "^5.0.6",
+    "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "standard": "^10.0.3",
     "styled-components": "^2.4.0",
