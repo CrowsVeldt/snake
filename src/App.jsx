@@ -2,30 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const App = () => {
-  let board = generateGameBoard()
-  return (
-    <GameBoard>
-      {
-        board.map(row => {
-          return row.map(item => {
-            return <GameSpace />
-          })
-        })
-      }
-    </GameBoard>
-
-  )
-}
-
-function generateGameBoard () {
-  const board = []
-  let index = 100
-
-  while (index > 0) {
-    board.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-    index--
-  }
-  return board
+  return <GameBoard />
 }
 
 const GameBoard = styled.div`
