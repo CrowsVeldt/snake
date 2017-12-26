@@ -6,7 +6,7 @@ const gameLayout = (
 ) => {
   let id = 0
   return (
-    <Background>
+    <Background size={state.board.length}>
       {state.board.map(row => {
         return row.map(space => {
           return (
@@ -17,18 +17,23 @@ const gameLayout = (
     </Background>
   )
 }
-// TODO: figure out how to scale the board based on the number of children
 const Background = styled.div`
-  height: 100px;
-  width: 100px;
   background-color: black;
-  display: flex;
-  flex-wrap: wrap;
+  height: ${props =>
+    `${props.size * 10}px;`
+  }
+  width: ${props =>
+    `${props.size * 10}px;`
+  }
+  display: grid;
+  grid-template-columns: ${props =>
+    `repeat(${props.size}, 10px [col-start]);`
+  }
 `
 const GameSpace = styled.div`
+  background-color: green;
   height: 8px;
   width: 8px;
-  border: 0.2px solid white;
 `
 
 export default gameLayout

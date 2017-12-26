@@ -3,7 +3,7 @@ const board = (state = {}, action) => {
     case 'START_NEW_GAME':
       break
     default:
-      return initializeGameBoard(100)
+      return initializeGameBoard(50)
   }
 }
 
