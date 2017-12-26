@@ -1,13 +1,13 @@
-const board = (state = 0, action) => {
-  // board should receive state as an array
+const board = (state = {}, action) => {
   switch (action.type) {
     case 'START_NEW_GAME':
-      return generateGameBoard(state)
+      break
+    default:
+      return initializeGameBoard(100)
   }
 }
 
-// TODO: Think about this some more
-export function generateGameBoard (dimension = 0) {
+export function initializeGameBoard (dimension = 0) {
   return [...Array(dimension)].map(x => [...Array(dimension)].map(x => 0))
 }
 

@@ -1,0 +1,20 @@
+Store: board, snakeLength, score, gameActive
+
+Top-level:
+- <Provider />: Provides the store as context for all child components
+- <App />: Receives the store as a prop, is the top-level rendered component
+
+Second-level:
+- <GameStatus />: Container component, receives the score and active values from the store, and updates the title
+- <GameTitle />: Presentational component, Displays when the game is lost, and the current score 
+- <GameLayout />: Container component, it receives the board state from the store and calls GameBoard to display it
+- <GameBoard />: Presentational component, it provides the display wrapper for GameLayout
+
+Logic:
+- A board space can have the values: 0, 1, 2, 3; where:
+- - 0 is empty
+- - 1 is a snake part
+- - 2 is a mushroom
+- - 3 is a wall
+- If the snake "eats" a mushroom it grows by one, and the score increases
+- if the snake "hits" itself or a wall, it dies and the game is over
