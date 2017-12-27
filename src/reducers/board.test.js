@@ -3,18 +3,18 @@ import board, {initializeGameBoard} from './board'
 
 describe('board', () => {
   test('returns a blank board by default', () => {
-    expect(board(0)).toEqual([])
+    expect(board([], 'TEST')).toEqual([])
   })
 
-  test('returns a two dimensional array when START_NEW_GAME is received with state 2', () => {
-    expect(board(2, {
+  test('returns an empty game when START_NEW_GAME received', () => {
+    expect(board({}, {
       type: 'START_NEW_GAME'
-    })).toEqual([[0, 0], [0, 0]])
+    })).toEqual(initializeGameBoard(50))
   })
 })
 
 describe('generateGameBoard', () => {
   test('returns a new board', () => {
-    expect(Array.isArray(initializeGameBoard(1))).toEqual(true)
+    expect(Array.isArray(initializeGameBoard())).toEqual(true)
   })
 })
