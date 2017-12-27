@@ -1,11 +1,9 @@
 /* eslint-env jest */
-import board, {generateGameBoard} from './board'
+import board, {initializeGameBoard} from './board'
 
 describe('board', () => {
-  test('returns a new board when it receives START_NEW_GAME', () => {
-    expect(board(0, {
-      type: 'START_NEW_GAME'
-    })).toEqual([])
+  test('returns a blank board by default', () => {
+    expect(board(0)).toEqual([])
   })
 
   test('returns a two dimensional array when START_NEW_GAME is received with state 2', () => {
@@ -17,6 +15,6 @@ describe('board', () => {
 
 describe('generateGameBoard', () => {
   test('returns a new board', () => {
-    expect(Array.isArray(generateGameBoard(1))).toEqual(true)
+    expect(Array.isArray(initializeGameBoard(1))).toEqual(true)
   })
 })

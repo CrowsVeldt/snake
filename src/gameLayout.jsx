@@ -6,18 +6,25 @@ const gameLayout = (
 ) => {
   let id = 0
   return (
-    <Background size={state.board.length}>
+    <Board size={state.board.length}>
       {state.board.map(row => {
-        return row.map(space => {
-          return (
-            <GameSpace key={id++} />
-          )
+        return row.map(tile => {
+          switch (tile) {
+            case 0:
+              return (
+                <EmptyTile key={id++} />
+              )
+            case 1:
+              return (
+                <WallTile key={id++} />
+              )
+          }
         })
       })}
-    </Background>
+    </Board>
   )
 }
-const Background = styled.div`
+const Board = styled.div`
   background-color: black;
   height: ${props =>
     `${props.size * 10}px;`
@@ -30,10 +37,17 @@ const Background = styled.div`
     `repeat(${props.size}, 10px [col-start]);`
   }
 `
-const GameSpace = styled.div`
+const EmptyTile = styled.div`
   background-color: green;
   height: 8px;
   width: 8px;
+`
+
+const WallTile = styled.div`
+ background-color: red;
+ height: 8px;
+ width: 8px;
+
 `
 
 export default gameLayout
