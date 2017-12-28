@@ -1,7 +1,7 @@
 const board = (state = initializeGameBoard(50), action) => {
   switch (action.type) {
     case 'START_NEW_GAME':
-      return initializeGameBoard()
+      return // TODO: Add the snake to the board
     default:
       return state
   }
