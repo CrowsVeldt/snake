@@ -1,7 +1,7 @@
 const snake = (state, action) => {
   switch (action.type) {
-    case 'CREATE_NEW_SNAKE':
-      break
+    case 'GROW_SNAKE':
+      return state
     default:
       return state
   }

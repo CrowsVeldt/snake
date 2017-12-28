@@ -19,6 +19,8 @@ const gameLayout = (
               return (
                 <WallTile key={id++} />
               )
+            case 2:
+              return <SnakeTile key={id++} />
           }
         })
       })}
@@ -48,7 +50,12 @@ const WallTile = styled.div`
  background-color: red;
  height: 8px;
  width: 8px;
+`
 
+const SnakeTile = styled.div`
+background-color: blue;
+height: 8px;
+width: 8px;
 `
 
 export default gameLayout
