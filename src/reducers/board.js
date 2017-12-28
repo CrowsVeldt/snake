@@ -1,17 +1,15 @@
-const board = (state, action) => {
+const board = (state = initializeGameBoard(50), action) => {
   switch (action.type) {
     case 'START_NEW_GAME':
-      return initializeGameBoard(50)
+      return initializeGameBoard()
     default:
-      return initializeGameBoard(50)
-      // return state
+      return state
   }
 }
 
 export function initializeGameBoard (size = 0) {
-  // Returns a multi-dimensional array representing the gamespace
+  // 0 === empty tile && 1 === wall tile
   return [...Array(size)].map((x, index) => {
-    // 0 === empty tile && 1 === wall tile
     if (index === 0 || index === size - 1) {
       return [...Array(size)].map(x => 1)
     } else {

@@ -1,14 +1,16 @@
-import GameBoard from './gameBoard'
 import combinedReducers from './reducers/combinedReducers'
+import { createStore } from 'redux'
+import App from './App'
+import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
 
 ReactDOM.render(
-  // TODO: Add button to start game, that dispatchs an action
-  <Provider store={createStore(combinedReducers)}>
-    <GameBoard />
+  <Provider store={createStore(
+  combinedReducers, /* preloadedState, */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)}>
+    <App />
   </Provider>,
   document.getElementById('root')
 )
