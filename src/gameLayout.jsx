@@ -4,11 +4,11 @@ import styled from 'styled-components'
 const gameLayout = (
   state
 ) => {
-  // TODO: think of a better key
   let id = 0
+  let board = state.board.boardState
   return (
-    <Board size={state.board.length}>
-      {state.board.map(row => {
+    <Board size={board.length}>
+      {board.map(row => {
         return row.map(tile => {
           switch (tile) {
             case 0:
@@ -21,6 +21,8 @@ const gameLayout = (
               )
             case 2:
               return <SnakeTile key={id++} />
+            default:
+              return 'blank'
           }
         })
       })}
