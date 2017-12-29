@@ -1,7 +1,10 @@
-const snake = (state, action) => {
+const snake = (state = {}, action) => {
   switch (action.type) {
-    case 'GROW_SNAKE':
-      return state
+    case 'SET_SNAKE_POSITION':
+      return {
+        ...state,
+        snakePosition: action.position
+      }
     default:
       return state
   }

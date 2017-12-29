@@ -1,4 +1,4 @@
-const board = (state = initializeGameBoard(50), action) => {
+const board = (state = initializeGameBoard(), action) => {
   switch (action.type) {
     case 'START_NEW_GAME':
       return initializeGameBoard(50, true)
@@ -7,8 +7,8 @@ const board = (state = initializeGameBoard(50), action) => {
   }
 }
 
-export function initializeGameBoard (size, snake) {
-  // 0 === empty tile && 1 === wall tile &&
+export function initializeGameBoard (size = 50, snake) {
+  // 0 === empty tile && 1 === wall tile && 2 === snake tile
 
   const wall = [...Array(size)].map(x => 1)
   const normalLine = [1].concat([...Array(size - 2)].map(x => 0)).concat([1])
