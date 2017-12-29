@@ -1,18 +1,7 @@
 const board = (state = initializeGameBoard(), action) => {
   switch (action.type) {
     case 'UPDATE_BOARD':
-      return [
-        ...state,
-        state.map((item, index) => {
-          if (index === state.snakePosition[0]) {
-            return item.map((item2, index2) => {
-              if (index2 === state.snakePosition[1]) {
-                return 2
-              }
-            })
-          }
-        })
-      ]
+      return null
     default:
       return [
         ...state

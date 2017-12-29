@@ -5,7 +5,6 @@ const gameLayout = (
   state
 ) => {
   let id = 0
-  console.log(state)
   return (
     <Board size={state.board.length}>
       {state.board.map(row => {
