@@ -6,6 +6,7 @@ const gameLayout = (
 ) => {
   // TODO: think of a better key
   let id = 0
+  console.log(state.board)
   return (
     <Board size={state.board.length}>
       {state.board.map(row => {
