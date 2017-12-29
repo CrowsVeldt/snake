@@ -1,14 +1,27 @@
-const board = (state = initializeGameBoard(50), action) => {
+const board = (state = initializeGameBoard(), action) => {
   switch (action.type) {
-    case 'START_NEW_GAME':
-      return initializeGameBoard(50, true)
+    case 'UPDATE_BOARD':
+      return [
+        ...state,
+        state.map((item, index) => {
+          if (index === state.snakePosition[0]) {
+            return item.map((item2, index2) => {
+              if (index2 === state.snakePosition[1]) {
+                return 2
+              }
+            })
+          }
+        })
+      ]
     default:
-      return state
+      return [
+        ...state
+      ]
   }
 }
 
-export function initializeGameBoard (size, snake) {
-  // 0 === empty tile && 1 === wall tile &&
+export function initializeGameBoard (size = 50) {
+  // 0 === empty tile && 1 === wall tile && 2 === snake tile
 
   const wall = [...Array(size)].map(x => 1)
   const normalLine = [1].concat([...Array(size - 2)].map(x => 0)).concat([1])
@@ -16,8 +29,6 @@ export function initializeGameBoard (size, snake) {
   return [...Array(size)].map((x, index) => {
     if (index === 0 || index === size - 1) {
       return wall
-    } if (snake && index === size / 2) {
-      return [1].concat([...Array((size - 2) / 2)].map(x => 0)).concat([2]).concat([...Array(((size - 2) / 2) - 1)].map(x => 0)).concat([1])
     } else {
       return normalLine
     }

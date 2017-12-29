@@ -1,11 +1,13 @@
 import { connect } from 'react-redux'
 import Button from './Button'
-import startNewGame from './actions/startNewGame'
+import setSnakePosition from './actions/setSnakePosition'
+import updateBoard from './actions/updateBoard'
 
 const mapDispatchToProps = dispatch => {
   return {
     onClick: () => {
-      dispatch(startNewGame())
+      dispatch(setSnakePosition([24, 24]))
+      dispatch(updateBoard())
     }
   }
 }

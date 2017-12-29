@@ -3,7 +3,7 @@ import gameLayout from './gameLayout'
 
 const mapStateToProps = state => {
   return {
-    state
+    board: state.board
   }
 }
 

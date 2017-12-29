@@ -4,9 +4,8 @@ import styled from 'styled-components'
 const gameLayout = (
   state
 ) => {
-  // TODO: think of a better key
   let id = 0
-  console.log(state.board)
+  console.log(state)
   return (
     <Board size={state.board.length}>
       {state.board.map(row => {
@@ -22,6 +21,8 @@ const gameLayout = (
               )
             case 2:
               return <SnakeTile key={id++} />
+            default:
+              return 'blank'
           }
         })
       })}
