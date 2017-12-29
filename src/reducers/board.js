@@ -1,11 +1,9 @@
-const board = (state = {
-  boardState: initializeGameBoard()
-}, action) => {
-  console.log(state)
+const board = (state = initializeGameBoard(), action) => {
   switch (action.type) {
     case 'UPDATE_BOARD':
-      return Object.assign({}, {
-        boardState: state.boardState.map((item, index) => {
+      return {
+        ...state,
+        board: state.map((item, index) => {
           if (index === state.snakePosition[0]) {
             return item.map((item2, index2) => {
               if (index2 === state.snakePosition[1]) {
@@ -14,7 +12,7 @@ const board = (state = {
             })
           }
         })
-      })
+      }
     default:
       return {
         ...state

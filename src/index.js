@@ -1,6 +1,6 @@
+import App from './App'
 import combinedReducers from './reducers/combinedReducers'
 import { createStore } from 'redux'
-import App from './App'
 import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -14,4 +14,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
-

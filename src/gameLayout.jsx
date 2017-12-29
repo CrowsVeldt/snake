@@ -5,9 +5,9 @@ const gameLayout = (
   state
 ) => {
   let id = 0
-  let board = state.board.boardState
+  console.log(state.state.board)
   return (
-    <Board size={board.length}>
+    <Board size={0}>
       {board.map(row => {
         return row.map(tile => {
           switch (tile) {
