@@ -3,6 +3,8 @@ import Button from './Button'
 import setSnakePosition from './actions/setSnakePosition'
 import startGame from './actions/startGame'
 
+const mapStoreToProps = store => store
+
 const mapDispatchToProps = dispatch => {
   return {
     onClick: () => {
@@ -13,7 +15,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 const StartButton = connect(
-  null,
+  mapStoreToProps,
   mapDispatchToProps
 )(Button)
 

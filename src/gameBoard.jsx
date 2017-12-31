@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
 import gameLayout from './gameLayout'
 
-const mapStateToProps = state => {
-  return state
-}
+const mapStateToProps = state => state
+
 
 const GameBoard = connect(
   mapStateToProps,
