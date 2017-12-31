@@ -1,11 +1,20 @@
 const board = (state = initializeGameBoard(), action) => {
   switch (action.type) {
-    case 'UPDATE_BOARD':
-      return null
-    default:
+    case 'SET_SNAKE_POSITION':
       return [
-        ...state
+        // TODO: Fix this so that it returns a proper array
+        state.map((item, index) => {
+          if (index === action.position[0]) {
+            return item.map((item2, index2) => {
+              if (item2 === action.position[1]) {
+                return 2
+              }
+            })
+          }
+        })
       ]
+    default:
+      return [...state]
   }
 }
 
