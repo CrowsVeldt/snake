@@ -21,7 +21,7 @@ const gameLayout = (
             case 2:
               return <SnakeTile key={id++} />
             default:
-              return 'blank'
+              return null
           }
         })
       })}

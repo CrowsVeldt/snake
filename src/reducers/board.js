@@ -4,7 +4,6 @@ const board = (state = initializeGameBoard(), action) => {
       return state.map((item, index) => {
         if (index === action.position[0]) {
           return item.map((item2, index2) => {
-            console.log(item2 + '  ' + index2)
             if (index2 === action.position[1]) {
               return 2
             } else {
@@ -21,8 +20,7 @@ const board = (state = initializeGameBoard(), action) => {
 }
 
 export function initializeGameBoard (size = 50) {
-  // 0 === empty tile && 1 === wall tile && 2 === snake tile
-
+  // 0 === empty tile && 1 === wall tile
   const wall = [...Array(size)].map(x => 1)
   const normalLine = [1].concat([...Array(size - 2)].map(x => 0)).concat([1])
 
