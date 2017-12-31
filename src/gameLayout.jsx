@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const gameLayout = (
   state
 ) => {
+  console.log(state)
   let id = 0
   return (
     <Board size={state.board.length}>
