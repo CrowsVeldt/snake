@@ -1,13 +1,13 @@
-import GameBoard from './gameBoard'
-import GameLoop from './gameLoop'
+import Board from './GameBoard'
+import GameLoop from './GameLoop'
 import React from 'react'
 import StartButton from './StartButton'
 
-let App = () => {
+const App = () => {
   return (
     <div>
       <GameLoop />
-      <GameBoard />
+      <Board />
       <StartButton />
     </div>
   )

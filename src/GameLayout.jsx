@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const gameLayout = (
+const Layout = (
   state
 ) => {
   let id = 0
@@ -59,4 +59,4 @@ height: 8px;
 width: 8px;
 `
 
-export default gameLayout
+export default Layout

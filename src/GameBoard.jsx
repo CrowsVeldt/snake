@@ -1,12 +1,11 @@
 import { connect } from 'react-redux'
-import gameLayout from './gameLayout'
+import Layout from './GameLayout'
 
 const mapStateToProps = state => state
 
-
-const GameBoard = connect(
+const Board = connect(
   mapStateToProps,
   null
-)(gameLayout)
+)(Layout)
 
-export default GameBoard
+export default Board
