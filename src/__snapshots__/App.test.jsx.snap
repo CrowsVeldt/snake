@@ -2,8 +2,8 @@
 
 exports[`The App Componenet Renders correctly 1`] = `
 <div>
-  <Connect(GameLoop) />
   <Connect(Layout) />
+  <Connect(GameLoop) />
   <Connect(Button) />
 </div>
 `;

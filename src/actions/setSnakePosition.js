@@ -1,6 +1,4 @@
-const setSnakePosition = (
-  position
-) => {
+const setSnakePosition = (position) => {
   return {
     type: 'SET_SNAKE_POSITION',
     position

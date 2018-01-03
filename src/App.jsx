@@ -6,8 +6,8 @@ import StartButton from './StartButton'
 const App = () => {
   return (
     <div>
-      <GameLoop />
       <Board />
+      <GameLoop />
       <StartButton />
     </div>
   )

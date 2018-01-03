@@ -11,15 +11,13 @@ const Layout = (
         return row.map(tile => {
           switch (tile) {
             case 0:
-              return (
-                <EmptyTile key={id++} />
-              )
+              return <EmptyTile key={id++} />
             case 1:
-              return (
-                <WallTile key={id++} />
-              )
+              return <WallTile key={id++} />
             case 2:
               return <SnakeTile key={id++} />
+            case 3:
+              return <MushroomTile key={id++} />
             default:
               return null
           }
@@ -54,9 +52,14 @@ const WallTile = styled.div`
 `
 
 const SnakeTile = styled.div`
-background-color: blue;
-height: 8px;
-width: 8px;
+  background-color: blue;
+  height: 8px;
+  width: 8px;
+`
+const MushroomTile = styled.div`
+ background-color: purple;
+ height: 8px;
+ width: 8px;
 `
 
 export default Layout

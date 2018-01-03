@@ -14,6 +14,20 @@ const board = (state = initializeGameBoard(), action) => {
           return item
         }
       })
+    case 'SET_MUSHROOM_POSITION':
+      return state.map((item, index) => {
+        if (index === action.position[0]) {
+          return item.map((item2, index2) => {
+            if (index2 === action.position[1]) {
+              return 3
+            } else {
+              return item2
+            }
+          })
+        } else {
+          return item
+        }
+      })
     default:
       return [...state]
   }
