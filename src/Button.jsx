@@ -6,7 +6,8 @@ const Button = (
 ) => {
   return (
     <button onClick={
-      props.game === 'inactive' ? props.onClick : undefined }>
+      props.game === 'inactive' ? props.onClick : undefined
+    }>
       Start!
     </button>
   )
