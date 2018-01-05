@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`The App Componenet Renders correctly 1`] = `
-<div>
-  <Connect(Layout) />
-  <Connect(GameLoop) />
-  <Connect(Button) />
-</div>
-`;
