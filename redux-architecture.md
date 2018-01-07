@@ -1,16 +1,11 @@
 # Store:
-- Game Board [array of [arrays]]
-- Snake {object
-  [array of snake piece positions],
-  snake directon
-}
+- Game Board: A multi-dimensional array
+- Snake: An object, containing an array of positions, and a direction
 - Player's Score
-- Game Active, True or False
+- Game Active: A boolean
 
 # Reducers:
 - Board
 - Snake
 - Score
 - Game
-
-
