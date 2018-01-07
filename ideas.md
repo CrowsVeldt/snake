@@ -22,8 +22,9 @@ right, the second element increments; left it decrements
 - The player's score is a number
 
 - Each tick, check the value of the index the snake will move into:
-- - if it is a mushroom, remove the mushroom from the board, add 1 to the snake's length (add an element to the snake length array before making the next move),
-and add 1 to the player's score
+- - if it is a mushroom, remove the mushroom from the board, add 1 to the 
+    snake's length (add an element to the snake length array before making the 
+    next move), and add 1 to the player's score
 - - if it is a wall, the game is over
 - - if it is another snake piece, the game is over
 - - if it is an empty space, nothing happens

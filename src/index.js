@@ -1,8 +1,6 @@
-const root = document.getElementById('root');
-
-root.innerHTML = '<div style="padding: 20px"><h1>Welcome to snake-web</h1></div>';
+const root = document.getElementById('root')
 
 // This is needed for Hot Module Replacement
 if (module.hot) {
-  module.hot.accept();
+  module.hot.accept()
 }
