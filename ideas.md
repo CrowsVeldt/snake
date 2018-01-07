@@ -32,4 +32,5 @@ and add 1 to the player's score
 
 
 - Use, and chain, promises for the game loop(?). (https://medium.freecodecamp.org/promises-and-pokemon-how-i-learned-to-think-in-async-2ec098c2c90d)
+- Use DeepFreeze to make sure reducers don't mutate the store
 - Use Redux for state management.

@@ -5,7 +5,7 @@ module.exports = {
       '@neutrinojs/web',
       {
         html: {
-          title: 'snake-web'
+          title: 'snake'
         }
       }
     ],

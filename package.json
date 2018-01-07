@@ -16,6 +16,8 @@
     "@neutrinojs/jest": "^8.0.14",
     "@neutrinojs/standardjs": "^8.0.14",
     "@neutrinojs/web": "^8.0.14",
-    "neutrino": "^8.0.14"
-  }
+    "neutrino": "^8.0.14",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {}
 }
