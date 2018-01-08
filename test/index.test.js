@@ -1,8 +1,9 @@
-/* eslint.env jest */
+/* eslint-env jest */
 
-import root from '../src/index'
+import body from '../src/index'
 
-describe('The Root Element', () => {
-  test('', () => {
+describe('The Body Element', () => {
+  test('has an h1 as it\'s first child', () => {
+    expect(body.childNodes[0].nodeName).toEqual('H1')
   })
 })
