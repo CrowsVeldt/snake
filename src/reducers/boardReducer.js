@@ -1,4 +1,4 @@
-const boardReducer = (board = {}) => {
+const boardReducer = (board = []) => {
   return board
 }
 
