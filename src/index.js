@@ -1,7 +1,10 @@
 import { createStore } from 'redux'
 import reducers from './reducers/combinedReducers'
 
-const store = createStore(reducers)
+const store = createStore(
+  reducers, /* preloaded state, */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 const body = document.getElementsByTagName('body')[0]
 const title = document.createElement('h1')
