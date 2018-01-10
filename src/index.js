@@ -11,11 +11,15 @@ const body = document.getElementsByTagName('body')[0]
 const title = document.createElement('h1')
 title.innerHTML = 'Snake'
 
+const board = document.createElement('div')
+// board size: 50x50
+
 store.subscribe(() => {
   console.log(store.getState())
 })
 
 body.appendChild(title)
+body.appendChild(board)
 body.appendChild(startButton)
 
 // This is needed for Hot Module Replacement
