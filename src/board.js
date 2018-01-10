@@ -21,6 +21,8 @@ export function renderBoard (boardArray) {
   const board = document.createElement('div')
   board.style.height = '500px'
   board.style.width = '500px'
+  board.style.display = 'grid'
+  board.style.gridTemplateColumns = 'repeat(50, 10px [col-start])'
 
   const boardChildren = renderBoardSpaces(boardArray)
   boardChildren.map(subArray => {
