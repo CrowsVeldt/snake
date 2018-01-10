@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 import reducers from './reducers/combinedReducers'
+import { initializeBoard, renderBoard } from './board'
 import startButton from './startButton'
 
 const store = createStore(
@@ -11,8 +12,7 @@ const body = document.getElementsByTagName('body')[0]
 const title = document.createElement('h1')
 title.innerHTML = 'Snake'
 
-const board = document.createElement('div')
-// board size: 50x50
+const board = renderBoard(initializeBoard(50))
 
 store.subscribe(() => {
   console.log(store.getState())

@@ -1,4 +1,37 @@
-export function initalizeGameBoard (size = 50) {
+export function renderBoardSpaces (boardArray) {
+  return boardArray.map((subArray) => {
+    return subArray.map((element) => {
+      let boardSpace = document.createElement('div')
+      boardSpace.style.height = '8px'
+      boardSpace.style.width = '8px'
+      boardSpace.style.border = '1px solid black'
+      switch (element) {
+        case 0:
+          boardSpace.style.backgroundColor = 'green'
+          return boardSpace
+        case 1:
+          boardSpace.style.backgroundColor = 'red'
+          return boardSpace
+      }
+    })
+  })
+}
+
+export function renderBoard (boardArray) {
+  const board = document.createElement('div')
+  board.style.height = '500px'
+  board.style.width = '500px'
+
+  const boardChildren = renderBoardSpaces(boardArray)
+  boardChildren.map(subArray => {
+    return subArray.map(element => {
+      board.appendChild(element)
+    })
+  })
+  return board
+}
+
+export function initializeBoard (size) {
   const wall = [...Array(size)].map(x => 1)
   const normalLine = [1].concat([...Array(size - 2)].map(x => 0)).concat([1])
 
