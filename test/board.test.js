@@ -53,3 +53,9 @@ describe('the board spaces returned by renderBoardSpaces', () => {
     expect(testNode.style.backgroundColor).toEqual('red')
   })
 })
+
+describe('renderBoard', () => {
+  test.skip('', () => {
+
+  })
+})
