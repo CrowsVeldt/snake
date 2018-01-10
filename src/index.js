@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 import reducers from './reducers/combinedReducers'
+import startButton from './startButton'
 
 const store = createStore(
   reducers, /* preloaded state, */
@@ -15,6 +16,7 @@ store.subscribe(() => {
 })
 
 body.appendChild(title)
+body.appendChild(startButton)
 
 // This is needed for Hot Module Replacement
 if (module.hot) {
