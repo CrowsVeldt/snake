@@ -1,6 +1,10 @@
 /* eslint-env jest */
 
-import { initializeBoard, renderBoardSpaces } from '../src/board'
+import {
+  initializeBoard,
+  renderBoard,
+  renderBoardSpaces
+} from '../src/board'
 
 describe('initializeBoard', () => {
   test('Returns an array', () => {
@@ -55,7 +59,32 @@ describe('the board spaces returned by renderBoardSpaces', () => {
 })
 
 describe('renderBoard', () => {
-  test.skip('', () => {
+  const validBoardArray = [
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1]
+  ]
 
+  test('throws an error if called witha non-array parameter', () => {
+    expect(() => {
+      renderBoard(5)
+    }).toThrow()
+  })
+
+  test('should throw an error if called with an invalid board array', () => {
+    expect(() => {
+      renderBoard([0])
+    }).toThrow()
+  })
+
+  test('should return a div if called with a valid board array', () => {
+    expect(renderBoard(validBoardArray).nodeName).toEqual('DIV')
+  })
+
+  test('the returned DIV should have boardArray X boardArray children elements', () => {
+    const numberOfChildren = validBoardArray.length * validBoardArray.length
+    expect(renderBoard(validBoardArray).childElementCount).toEqual(numberOfChildren)
   })
 })
