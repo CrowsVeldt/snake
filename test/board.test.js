@@ -83,8 +83,8 @@ describe('renderBoard', () => {
     expect(renderBoard(validBoardArray).nodeName).toEqual('DIV')
   })
 
-  test('the returned DIV should have boardArray X boardArray children elements', () => {
-    const numberOfChildren = validBoardArray.length * validBoardArray.length
-    expect(renderBoard(validBoardArray).childElementCount).toEqual(numberOfChildren)
+  test('the returned DIV should have (boardArray * boardArray) children elements', () => {
+    const childElements = validBoardArray.length * validBoardArray.length
+    expect(renderBoard(validBoardArray).childElementCount).toEqual(childElements)
   })
 })

@@ -6,8 +6,4 @@ describe('The Board Reducer', () => {
     const testAction = {type: 'TEST'}
     expect(boardReducer({i: 1}, testAction)).toEqual({i: 1})
   })
-
-  test.skip('Returns a new board when called with START_GAME', () => {
-    expect().toEqual()
-  })
 })
