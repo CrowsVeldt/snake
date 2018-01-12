@@ -1,3 +1,7 @@
+export function createBoard (store) {
+  return renderBoard(store)
+}
+
 export function renderBoardSpaces (boardArray) {
   return boardArray.map((subArray) => {
     return subArray.map((element) => {

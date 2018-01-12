@@ -1,4 +1,14 @@
-const startButton = document.createElement('button')
-startButton.innerHTML = 'Start'
+import setSnakePosition from './actions/setSnakePosition'
 
-export default startButton
+const createStartButton = (dispatch) => {
+  const button = document.createElement('button')
+  button.innerHTML = 'Start'
+  if (dispatch) {
+    button.onclick = () => {
+      dispatch(setSnakePosition([2, 2]))
+    }
+  }
+  return button
+}
+
+export default createStartButton

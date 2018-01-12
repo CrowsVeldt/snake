@@ -1,8 +1,12 @@
 /* eslint-env jest */
-import startButton from '../src/startButton'
+import createStartButton from '../src/startButton'
 
-describe('startButton', () => {
-  test('is a button', () => {
-    expect(startButton.nodeName).toEqual('BUTTON')
+describe('createStartButton', () => {
+  test('is a function', () => {
+    expect(typeof createStartButton).toEqual('function')
+  })
+
+  test('returns an HTML button', () => {
+    expect(createStartButton().nodeName).toEqual('BUTTON')
   })
 })
