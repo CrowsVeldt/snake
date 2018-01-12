@@ -6,6 +6,10 @@ const snake = (state = {
       return Object.assign({}, state, {
         snakeDirection: action.direction
       })
+    case 'SET_SNAKE_POSITION':
+      return Object.assign({}, state, {
+        snakePosition: action.position
+      })
     default:
       return state
   }

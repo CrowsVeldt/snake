@@ -7,7 +7,7 @@ const createStartButton = (dispatch) => {
   if (dispatch) {
     button.onclick = () => {
       dispatch(startGame())
-      dispatch(setSnakePosition([2, 2]))
+      dispatch(setSnakePosition([25, 25]))
     }
   }
   return button
