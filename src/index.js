@@ -15,10 +15,10 @@ body.style.alignItems = 'center'
 const title = document.createElement('h1')
 title.innerHTML = 'Snake'
 
-let board = createBoard(store.getState().boardReducer)
+let board = createBoard(store.getState().board)
 
 store.subscribe(() => {
-  updateBoard(store.getState().boardReducer, body)
+  updateBoard(store.getState().board, body)
 })
 
 body.appendChild(title)

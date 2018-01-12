@@ -1,6 +1,6 @@
 import { initializeBoard } from '../board'
 
-const boardReducer = (state = initializeBoard(50), action) => {
+const board = (state = initializeBoard(50), action) => {
   switch (action.type) {
     case 'SET_SNAKE_POSITION':
       return setPiecePosition(2, state, action.position)
@@ -25,4 +25,4 @@ export function setPiecePosition (piece, board, position) {
   })
 }
 
-export default boardReducer
+export default board
