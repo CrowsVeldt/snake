@@ -12,6 +12,9 @@ export function renderBoardSpaces (boardArray) {
         case 1:
           boardSpace.style.backgroundColor = 'red'
           return boardSpace
+        case 2:
+          boardSpace.style.backgroundColor = 'purple'
+          return boardSpace
       }
     })
   })

@@ -1,4 +1,6 @@
-const boardReducer = (state = [], action) => {
+import { initializeBoard } from '../board'
+
+const boardReducer = (state = initializeBoard(50), action) => {
   switch (action.type) {
     case 'SET_SNAKE_POSITION':
       return setPiecePosition(2, state, action.position)
