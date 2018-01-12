@@ -15,7 +15,11 @@ describe('The Game reducer', () => {
     expect(game([1, 2], {type: 'TEST'})).toEqual([1, 2])
   })
 
-  test('should return game: inactive when called with no parameters', () => {
-    expect(game(undefined, {type: 'TEST'})).toEqual({game: 'inactive'})
+  test('should return gameActive: false when called with no parameters', () => {
+    expect(game(undefined, {type: 'TEST'})).toEqual({gameActive: false})
+  })
+
+  test('should return gameActive: active when it receives START_GAME action', () => {
+    expect(game(undefined, {type: 'START_GAME'})).toEqual({gameActive: true})
   })
 })

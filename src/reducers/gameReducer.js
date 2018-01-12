@@ -1,7 +1,9 @@
-const game = (state = { game: 'inactive' }, action) => {
+const game = (state = { gameActive: false }, action) => {
   switch (action.type) {
-    case '':
-      break
+    case 'START_GAME':
+      return Object.assign({}, state, {
+        gameActive: true
+      })
     default:
       return state
   }
