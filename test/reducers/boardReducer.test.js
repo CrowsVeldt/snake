@@ -8,13 +8,28 @@ const validBoardArray = [
   [1, 0, 0, 0, 1],
   [1, 1, 1, 1, 1]
 ]
-
 const testResult = setPiecePosition(1, validBoardArray, [1, 1])
 
 describe('The Board Reducer', () => {
   test('returns the state unchanged by default', () => {
     const testAction = {type: 'TEST'}
     expect(boardReducer({i: 1}, testAction)).toEqual({i: 1})
+  })
+
+  test('should return a new state array when called with SET_SNAKE_POSITION', () => {
+    const testAction = {
+      type: 'SET_SNAKE_POSITION',
+      position: [1, 1]
+    }
+    expect(Array.isArray(boardReducer(validBoardArray, testAction))).toEqual(true)
+  })
+
+  test('returns a new state when called with SET_SNAKE_POSITION', () => {
+    const testAction = {
+      type: 'SET_SNAKE_POSITION',
+      position: [1, 1]
+    }
+    expect(boardReducer(validBoardArray, testAction)).not.toEqual(validBoardArray)
   })
 })
 

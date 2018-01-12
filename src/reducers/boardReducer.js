@@ -1,5 +1,7 @@
 const boardReducer = (state = [], action) => {
   switch (action.type) {
+    case 'SET_SNAKE_POSITION':
+      return setPiecePosition(2, state, action.position)
     default:
       return state
   }
