@@ -1,5 +1,7 @@
-export function createBoard (store) {
-  return renderBoard(store)
+export function updateBoard (boardState, body) {
+  const board = createBoard(boardState)
+  body.removeChild(document.getElementById('board'))
+  body.appendChild(board)
 }
 
 export function renderBoardSpaces (boardArray) {
@@ -24,12 +26,13 @@ export function renderBoardSpaces (boardArray) {
   })
 }
 
-export function renderBoard (boardArray) {
+export function createBoard (boardArray) {
   const board = document.createElement('div')
   board.style.height = '500px'
   board.style.width = '500px'
   board.style.display = 'grid'
   board.style.gridTemplateColumns = 'repeat(50, 10px [col-start])'
+  board.setAttribute('id', 'board')
 
   const boardChildren = renderBoardSpaces(boardArray)
   boardChildren.map(subArray => {

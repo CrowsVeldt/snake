@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 import reducers from './reducers/combinedReducers'
-import { createBoard } from './board'
+import { createBoard, updateBoard } from './board'
 import createStartButton from './startButton'
 
 const store = createStore(
@@ -15,12 +15,15 @@ body.style.alignItems = 'center'
 const title = document.createElement('h1')
 title.innerHTML = 'Snake'
 
+let board = createBoard(store.getState().boardReducer)
+
 store.subscribe(() => {
+  updateBoard(store.getState().boardReducer, body)
 })
 
 body.appendChild(title)
-body.appendChild(createBoard(store.getState().boardReducer))
 body.appendChild(createStartButton(store.dispatch))
+body.appendChild(board)
 
 // This is needed for Hot Module Replacement
 if (module.hot) {

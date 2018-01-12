@@ -2,7 +2,7 @@
 
 import {
   initializeBoard,
-  renderBoard,
+  createBoard,
   renderBoardSpaces
 } from '../src/board'
 
@@ -58,7 +58,7 @@ describe('the board spaces returned by renderBoardSpaces', () => {
   })
 })
 
-describe('renderBoard', () => {
+describe('createBoard', () => {
   const validBoardArray = [
     [1, 1, 1, 1, 1],
     [1, 0, 0, 0, 1],
@@ -69,22 +69,22 @@ describe('renderBoard', () => {
 
   test('throws an error if called witha non-array parameter', () => {
     expect(() => {
-      renderBoard(5)
+      createBoard(5)
     }).toThrow()
   })
 
   test('should throw an error if called with an invalid board array', () => {
     expect(() => {
-      renderBoard([0])
+      createBoard([0])
     }).toThrow()
   })
 
   test('should return a div if called with a valid board array', () => {
-    expect(renderBoard(validBoardArray).nodeName).toEqual('DIV')
+    expect(createBoard(validBoardArray).nodeName).toEqual('DIV')
   })
 
   test('the returned DIV should have (boardArray * boardArray) children elements', () => {
     const childElements = validBoardArray.length * validBoardArray.length
-    expect(renderBoard(validBoardArray).childElementCount).toEqual(childElements)
+    expect(createBoard(validBoardArray).childElementCount).toEqual(childElements)
   })
 })
