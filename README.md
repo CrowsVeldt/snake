@@ -12,3 +12,5 @@ Built with JavaScript & Redux.
 - I can control the snake's direction with the left and right arrow keys
 - I can colllect mushrooms which appear on the board, and when I do my snake gets longer, and my score increases
 - If my snake runs into a wall or part of itself it dies, and the game ends
+- When the game ends I can am given an opportunity to enter a name, and if I do my score is displayed on a high score
+board with my score next to it
