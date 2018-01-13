@@ -1,7 +1,15 @@
+import setSnakePosition from './actions/setSnakePosition'
+
 const gameLoop = (state, dispatch) => {
-  // 1. Assign snakePosition and snakeDirection to local variables
-  // 2. based on the above dispatch a setSnakePosition action for the
-  //   next appropriate location
+  const snakePosition = state.snake.snakePosition
+  const snakeDirection = state.snake.snakeDirection
+
+  switch (snakeDirection) {
+    case 'right':
+      return dispatch(setSnakePosition([snakePosition[0], snakePosition[1] + 1]))
+    default:
+      break
+  }
 }
 
 export default gameLoop
