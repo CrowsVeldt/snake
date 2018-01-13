@@ -5,9 +5,10 @@ export function updateBoard (boardState, body) {
 }
 
 export function renderBoardSpaces (boardArray) {
-  return boardArray.map((subArray) => {
-    return subArray.map((element) => {
+  return boardArray.map((subArray, index) => {
+    return subArray.map((element, index2) => {
       let boardSpace = document.createElement('div')
+      boardSpace.setAttribute('id', index + ' ' + index2)
       boardSpace.style.height = '8px'
       boardSpace.style.width = '8px'
       boardSpace.style.border = '1px solid black'
