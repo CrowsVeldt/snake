@@ -2,7 +2,7 @@ import { createStore } from 'redux'
 import reducers from './reducers/combinedReducers'
 import { createBoard, updateBoard } from './board'
 import createStartButton from './startButton'
-import gameLoop from './gameLoop'
+import gameTick from './actions/gameTick'
 
 const store = createStore(
   reducers, /* preloaded state, */
@@ -22,6 +22,12 @@ let board = createBoard(store.getState().board)
 store.subscribe(() => {
   updateBoard(store.getState().board, body)
 })
+
+setInterval(() => {
+  if (store.getState().game.gameActive === true) {
+    store.dispatch(gameTick())
+  }
+}, 1000)
 
 body.appendChild(title)
 body.appendChild(createStartButton(store.dispatch))
