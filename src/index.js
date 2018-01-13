@@ -12,6 +12,7 @@ const body = document.getElementsByTagName('body')[0]
 body.style.display = 'flex'
 body.style.flexDirection = 'column'
 body.style.alignItems = 'center'
+
 const title = document.createElement('h1')
 title.innerHTML = 'Snake'
 
