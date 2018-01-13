@@ -2,6 +2,7 @@ import { createStore } from 'redux'
 import reducers from './reducers/combinedReducers'
 import { createBoard, updateBoard } from './board'
 import createStartButton from './startButton'
+import gameLoop from './gameLoop'
 
 const store = createStore(
   reducers, /* preloaded state, */
