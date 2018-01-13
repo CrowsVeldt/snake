@@ -2,7 +2,7 @@ import { createStore } from 'redux'
 import reducers from './reducers/combinedReducers'
 import { createBoard, updateBoard } from './board'
 import createStartButton from './startButton'
-import gameTick from './actions/gameTick'
+import gameLoop from './gameLoop'
 
 const store = createStore(
   reducers, /* preloaded state, */
@@ -25,7 +25,7 @@ store.subscribe(() => {
 
 setInterval(() => {
   if (store.getState().game.gameActive === true) {
-    store.dispatch(gameTick())
+    gameLoop(store.getState(), store.dispatch)
   }
 }, 1000)
 
