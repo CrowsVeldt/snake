@@ -6,12 +6,6 @@ import {
   renderBoardSpaces
 } from '../src/board'
 
-describe.skip('updateBoard', () => {
-  test.skip('updates the board', () => {
-    // TODO: figure out how to do this
-  })
-})
-
 describe('initializeBoard', () => {
   test('Returns an array', () => {
     expect(Array.isArray(initializeBoard(5))).toEqual(true)

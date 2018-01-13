@@ -1,5 +1,6 @@
 const snake = (state = {
-  snakeDirection: 'right'
+  snakeDirection: 'right',
+  snakePosition: [[25, 25], [25, 25]]
 }, action) => {
   switch (action.type) {
     case 'SET_SNAKE_DIRECTION':

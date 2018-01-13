@@ -1,4 +1,6 @@
 export function updateBoard (boardState, body) {
+  // I don't know how to test this/write it to be more testable. So I'll depend
+  // on manual tests for now
   const board = createBoard(boardState)
   body.removeChild(document.getElementById('board'))
   body.appendChild(board)

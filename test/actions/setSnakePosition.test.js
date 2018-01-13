@@ -24,22 +24,4 @@ describe('The setSnakePosition action creater', () => {
   test('should return an object with a position property', () => {
     expect(testCall.position).not.toEqual(undefined)
   })
-
-  test('should throw an error if called with something other than an array', () => {
-    expect(() => {
-      setSnakePosition('bad parameter')
-    }).toThrow()
-  })
-
-  test('should throw an error if the position array has too few elements', () => {
-    expect(() => {
-      setSnakePosition([1])
-    }).toThrow()
-  })
-
-  test('should throw an error if the position array has too many elements', () => {
-    expect(() => {
-      setSnakePosition([1, 1, 1])
-    }).toThrow()
-  })
 })

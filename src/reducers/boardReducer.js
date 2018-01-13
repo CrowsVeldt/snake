@@ -11,9 +11,9 @@ const board = (state = initializeBoard(50), action) => {
 
 export function setPiecePosition (piece, board, position) {
   return board.map((subArray, index) => {
-    if (index === position[0]) {
+    if (index === position[0][0]) {
       return subArray.map((item, index2) => {
-        if (index2 === position[1]) {
+        if (index2 === position[0][1]) {
           return piece
         } else {
           return item
