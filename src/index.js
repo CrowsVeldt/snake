@@ -18,7 +18,6 @@ body.style.alignItems = 'center'
 body.addEventListener('keydown', (key) => {
   const currentDirection = store.getState().snake.snakeDirection
   if (key.keyCode === 37 || key.keyCode === 39) {
-    console.log(key)
     store.dispatch(setSnakeDirection(changeSnakeDirection(key.keyCode, currentDirection)))
   }
 })

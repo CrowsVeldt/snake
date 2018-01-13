@@ -6,9 +6,9 @@ export function updateBoard (boardState, body) {
   body.appendChild(board)
 }
 
-export function renderBoardSpaces (boardArray) {
-  return boardArray.map((subArray, index) => {
-    return subArray.map((element, index2) => {
+export function renderBoardSpaces (boardSpaces) {
+  return boardSpaces.map((boardSpacesRow, index) => {
+    return boardSpacesRow.map((element, index2) => {
       let boardSpace = document.createElement('div')
       boardSpace.setAttribute('id', index + ' ' + index2)
       boardSpace.style.height = '8px'
@@ -38,8 +38,8 @@ export function createBoard (boardArray) {
   board.setAttribute('id', 'board')
 
   const boardChildren = renderBoardSpaces(boardArray)
-  boardChildren.map(subArray => {
-    return subArray.map(element => {
+  boardChildren.map(boardRow => {
+    return boardRow.map(element => {
       board.appendChild(element)
     })
   })
