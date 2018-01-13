@@ -18,12 +18,11 @@ export function renderBoardSpaces (boardSpaces) {
         case 0:
           boardSpace.style.backgroundColor = 'green'
           return boardSpace
-        case 1:
-          boardSpace.style.backgroundColor = 'red'
-          return boardSpace
         case 2:
           boardSpace.style.backgroundColor = 'purple'
           return boardSpace
+        default:
+          return Error('invalid space number')
       }
     })
   })
@@ -47,14 +46,7 @@ export function createBoard (boardArray) {
 }
 
 export function initializeBoard (size) {
-  const wall = [...Array(size)].map(x => 1)
-  const normalLine = [1].concat([...Array(size - 2)].map(x => 0)).concat([1])
-
   return [...Array(size)].map((x, index) => {
-    if (index === 0 || index === size - 1) {
-      return wall
-    } else {
-      return normalLine
-    }
+    return [...Array(size)].map(x => 0)
   })
 }

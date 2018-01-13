@@ -3,20 +3,29 @@ import { initializeBoard } from '../board'
 const board = (state = initializeBoard(50), action) => {
   switch (action.type) {
     case 'SET_SNAKE_POSITION':
-      return setSnakePosition(2, state, action.position[0])
+      return setSnakePosition(state, action.position)
     default:
       return state
   }
 }
 
-export function setSnakePosition (piece, board, position) {
-  return board.map((row, rowIndex) => {
-    if (rowIndex === position[0]) {
-      return row.slice(0, position[1]).concat([piece]).concat(row.slice(position[1] + 1))
-    } else {
-      return row
+export function setSnakePosition (board, position) {
+  const snakeRow = position[0][0]
+  const snakeColumn = position[0][1]
+  const oldBoard = board.map((row, rowIndex) => {
+    if (rowIndex === snakeRow) {
+      return row.map((column, columnIndex) => {
+        if (columnIndex === snakeColumn) {
+          return 2
+        } else {
+          return 0
+        }
+      })
+    } else if (rowIndex !== snakeRow) {
+      return [...Array(row.length)].map(x => 0)
     }
   })
+  return oldBoard
 }
 
 export default board

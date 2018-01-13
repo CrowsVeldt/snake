@@ -13,18 +13,12 @@ describe('initializeBoard', () => {
 
   test('returns an empty game board', () => {
     expect(initializeBoard(5)).toEqual([
-      [1, 1, 1, 1, 1],
-      [1, 0, 0, 0, 1],
-      [1, 0, 0, 0, 1],
-      [1, 0, 0, 0, 1],
-      [1, 1, 1, 1, 1]
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
     ])
-  })
-
-  test('throws an error if an invalid board size is given', () => {
-    expect(() => {
-      initializeBoard(1)
-    }).toThrow(RangeError)
   })
 })
 
@@ -50,21 +44,15 @@ describe('the board spaces returned by renderBoardSpaces', () => {
     const testNode = testBoard[0][0]
     expect(testNode.style.backgroundColor).toEqual('green')
   })
-
-  test('are red if they are wall spaces', () => {
-    const testBoard = renderBoardSpaces([[1]])
-    const testNode = testBoard[0][0]
-    expect(testNode.style.backgroundColor).toEqual('red')
-  })
 })
 
 describe('createBoard', () => {
   const validBoardArray = [
-    [1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 1],
-    [1, 0, 0, 0, 1],
-    [1, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1]
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]
   ]
 
   test('throws an error if called witha non-array parameter', () => {
