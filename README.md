@@ -1,3 +1,7 @@
+I've decided to trunk this porject for now. I can already see that it's going to be
+a huge headache to get right, and I've got a good enough idea of the basics of Redux.
+I think I'll learn more by moving on to something else. 
+
 # Snake - The Game. 
 
 Built with JavaScript & Redux.
