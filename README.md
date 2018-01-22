@@ -1,6 +1,7 @@
-I've decided to trunk this porject for now. I can already see that it's going to be
-a huge headache to get right, and I've got a good enough idea of the basics of Redux.
-I think I'll learn more by moving on to something else. 
+I've decided to shelve this project for now. I don't think I will learn much more about Redux
+from finishing it, and it will take more work than it is worth. So I'm going to move on to something
+else. I definitely plan on finishing *A* snake game someday, whether it'll be this one or I'll start
+over with different tools.
 
 # Snake - The Game. 
 
